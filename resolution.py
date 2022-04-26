@@ -5,7 +5,6 @@ from time import sleep
 from pathlib import Path
 
 
-
 def query_historic():
     """
     
@@ -88,13 +87,13 @@ def read_and_write_files():
    
     database.to_csv("database.csv", index=False)
     historic.to_csv("historic.csv", index=False)
-    sleep(2)  
 
 
 def main():
-	read_and_write_files()
-	query_database()
-	query_historic()
-	sleep(5)
+    while True:
+        read_and_write_files()
+        query_database()
+        query_historic()
+        sleep(5)
 
 main()
