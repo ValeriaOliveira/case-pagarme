@@ -24,7 +24,7 @@ docker-compose up -d
 
 ## 2. Raciocínio 
 
-O arquivo generate.py roda em loop infinito criando arquivos CSvs dentro da pasta input_data, pelo que compreendi do case o objetivo era conseguir tratar os dados como se fossem streaming enquanto se realiza as consultas em tempo real.
+O arquivo generate.py roda em loop infinito criando arquivos CSvs dentro da pasta input_data, pelo que compreendi do case o objetivo era conseguir tratar os dados como se fossem de streaming.
 
 
 ### Solução (Visão Geral)
