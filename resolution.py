@@ -48,7 +48,6 @@ def insert_data(database, insert_row):
     """
     
     """
-
     database=pd.concat([database, insert_row.to_frame().T], ignore_index=True)
     return database
 
@@ -56,8 +55,7 @@ def insert_data(database, insert_row):
 def update_data(database, update_row):
     """
     
-    """
-    
+    """    
     database.loc[(database.customer_id == update_row["customer_id"]), \
         ['op', 'balance', 'create_timestamp', 'update_timestamp']]= \
         [update_row["op"], update_row["balance"], update_row["create_timestamp"], \
