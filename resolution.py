@@ -2,6 +2,8 @@ SOURCE_FOLDER = "input_data/"
 import os 
 import pandas as pd 
 from time import sleep
+from pathlib import Path
+
 
 
 def query_historic():
@@ -70,12 +72,12 @@ def read_and_write_files():
     """
 
     """
-    customers_files = os.listdir(SOURCE_FOLDER)
+    customers_files = sorted(Path(SOURCE_FOLDER).iterdir(), key=lambda files: files.stat().st_mtime)
+
     database = pd.DataFrame()
-    historic = pd.DataFrame()
-    
+    historic = pd.DataFrame()    
     for accounts in customers_files:
-        raw_data = pd.read_csv(SOURCE_FOLDER+accounts)
+        raw_data = pd.read_csv(accounts)
         for rows in raw_data.iterrows():
             row = rows[1]
             historic = pd.concat([historic, row.to_frame().T], ignore_index=True)	
