@@ -1,0 +1,30 @@
+version: '3'
+x-commom:
+  &commom
+  build: .
+  volumes:
+    - ./input_data:/opt/app/input_data
+
+
+services:
+  generate:
+    <<: *commom
+    volumes:
+      # - ./generate.py:/opt/app/generate.py
+      - .:/opt/app/
+    command: python generate.py
+
+  resolution:
+    <<: *commom
+    volumes: 
+      # - ./resolution.py:/opt/app/resolution.py
+      - .:/opt/app/
+    command: python resolution.py
+
+      #  init:
+      #    <<: *commom
+      #    volumes:
+      #      # - ./generate.py:/opt/app/generate.py
+      #      - .:/opt/app/
+      #    command: python generate.py 20
+
