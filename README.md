@@ -44,6 +44,6 @@ O arquivo generate.py roda em loop infinito criando arquivos CSVs dentro da past
 
 ### Possíveis Melhorias 
 
-* Documentar tudo em inglês ou português
+* Documentar tudo em português ou inglês
 * Usar um crontab ao invês de desenvolver o arquivo em looping infinito
 * Usar Beam ou Spark para manipulação dos dados
